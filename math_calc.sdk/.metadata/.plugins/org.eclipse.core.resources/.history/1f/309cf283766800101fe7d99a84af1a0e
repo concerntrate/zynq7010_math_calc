@@ -1,0 +1,48 @@
+#include "arm_math.h"
+#include "arm_const_structs.h"
+#include "xil_printf.h"
+#include "xtime_l.h"
+#include <math.h>
+#include <stdio.h>
+
+#define FFT_SIZE 1024
+
+float32_t input[2 * FFT_SIZE];   // 实部和虚部交错排列 [Re0, Im0, Re1, Im1, ...]
+float32_t output[FFT_SIZE];      // 幅度结果
+
+int main() {
+    XTime tStart, tEnd;
+
+    // 1. 生成测试信号（50Hz 正弦波）
+    for (int i = 0; i < FFT_SIZE; i++) {
+        float t = (float)i / FFT_SIZE;
+        input[2 * i]     = sinf(2 * M_PI * 50 * t);  // 实部
+        input[2 * i + 1] = 0.0f;                     // 虚部
+    }
+
+    // 2. 初始化 FFT 结构体（使用 CMSIS 自带的常量结构）
+    const arm_cfft_instance_f32* cfft_inst = &arm_cfft_sR_f32_len1024;
+
+    // 3. 启动计时
+    XTime_GetTime(&tStart);
+
+    // 4. 执行 FFT + 计算幅度
+    arm_cfft_f32(cfft_inst, input, 0, 1);           // Forward FFT, bit-reversal
+    arm_cmplx_mag_f32(input, output, FFT_SIZE);     // 复数 -> 幅度
+
+    // 5. 结束计时
+    XTime_GetTime(&tEnd);
+
+    // 6. 打印前 10 个幅值结果
+
+    printf("First 10 FFT magnitudes:\r\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Bin[%d] = %f\r\n", i, output[i]);
+    }
+
+    // 7. 计算执行时间（单位: 微秒）
+    double duration_us = 1.0 * (tEnd - tStart) / (COUNTS_PER_SECOND / 1000000);
+    printf("FFT + Magnitude time: %.2f us\r\n", duration_us);
+
+    return 0;
+}

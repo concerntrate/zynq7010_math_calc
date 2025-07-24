@@ -1,0 +1,47 @@
+timestamp=[2025-07-24 16:44:28], mode=WORKBENCH_START, duration=0:00:05.006, duration_ms=5006, data={}
+timestamp=[2025-07-24 16:44:28], mode=WORKBENCH_UI_INIT, duration=0:00:00.440, duration_ms=440, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-07-24 16:44:29], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.572, duration_ms=572, data={}
+timestamp=[2025-07-24 16:45:21], mode=APP_CREATION, duration=0:00:20.319, duration_ms=20319, data={name=math_calc, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=system_wrapper, application_type=application}
+timestamp=[2025-07-24 16:51:08], mode=PLATFORM_GENERATION, duration=0:00:12.702, duration_ms=12702, data={name=system_wrapper}
+timestamp=[2025-07-24 16:55:03], mode=BUILD, duration=0:03:54.325, duration_ms=234325, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:02:51], mode=BUILD, duration=0:00:00.680, duration_ms=680, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:03:15], mode=BUILD, duration=0:00:23.000, duration_ms=23000, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:07:30], mode=BUILD, duration=0:00:00.680, duration_ms=680, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:07:52], mode=BUILD, duration=0:00:21.953, duration_ms=21953, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:08:46], mode=BUILD, duration=0:00:22.422, duration_ms=22422, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:09:41], mode=BUILD, duration=0:00:00.795, duration_ms=795, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:10:03], mode=BUILD, duration=0:00:21.896, duration_ms=21896, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:12:41], mode=BUILD, duration=0:00:00.660, duration_ms=660, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:13:04], mode=BUILD, duration=0:00:22.582, duration_ms=22582, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:16:26], mode=BUILD, duration=0:00:00.603, duration_ms=603, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:16:49], mode=BUILD, duration=0:00:22.352, duration_ms=22352, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:20:32], mode=BUILD, duration=0:00:00.654, duration_ms=654, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:20:55], mode=BUILD, duration=0:00:21.985, duration_ms=21985, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:22:55], mode=PLATFORM_GENERATION, duration=0:00:07.519, duration_ms=7519, data={name=system_wrapper}
+timestamp=[2025-07-24 17:22:55], mode=BUILD, duration=0:00:00.680, duration_ms=680, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:23:15], mode=PLATFORM_GENERATION, duration=0:00:12.313, duration_ms=12313, data={name=system_wrapper}
+timestamp=[2025-07-24 17:23:39], mode=BUILD, duration=0:00:23.626, duration_ms=23626, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:29:54], mode=BUILD, duration=0:00:22.295, duration_ms=22295, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:35:02], mode=WORKBENCH_START, duration=0:00:07.899, duration_ms=7899, data={}
+timestamp=[2025-07-24 17:35:03], mode=WORKBENCH_UI_INIT, duration=0:00:01.275, duration_ms=1275, data={editors_count=4, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,math_calc,math_calc_system,system_wrapper}
+timestamp=[2025-07-24 17:35:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.396, duration_ms=396, data={}
+timestamp=[2025-07-24 17:35:41], mode=BUILD, duration=0:00:22.962, duration_ms=22962, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:41:29], mode=BUILD, duration=0:00:00.615, duration_ms=615, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:41:51], mode=BUILD, duration=0:00:22.285, duration_ms=22285, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:51:57], mode=BUILD, duration=0:00:00.669, duration_ms=669, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:52:19], mode=BUILD, duration=0:00:21.801, duration_ms=21801, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:54:03], mode=BUILD, duration=0:00:00.563, duration_ms=563, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:54:04], mode=BUILD, duration=0:00:01.051, duration_ms=1051, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:54:35], mode=BUILD, duration=0:00:01.308, duration_ms=1308, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:54:59], mode=BUILD, duration=0:00:00.760, duration_ms=760, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:58:35], mode=BUILD, duration=0:00:01.525, duration_ms=1525, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 17:59:50], mode=BUILD, duration=0:00:00.426, duration_ms=426, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 17:59:51], mode=BUILD, duration=0:00:01.458, duration_ms=1458, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 18:01:23], mode=BUILD, duration=0:00:01.421, duration_ms=1421, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 18:04:16], mode=BUILD, duration=0:00:01.506, duration_ms=1506, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 18:05:27], mode=BUILD, duration=0:00:01.304, duration_ms=1304, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 18:06:45], mode=BUILD, duration=0:00:00.398, duration_ms=398, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 18:06:46], mode=BUILD, duration=0:00:01.266, duration_ms=1266, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 18:07:37], mode=BUILD, duration=0:00:00.416, duration_ms=416, data={name=math_calc, configuration=Debug, clean_build=true}
+timestamp=[2025-07-24 18:07:38], mode=BUILD, duration=0:00:01.475, duration_ms=1475, data={name=math_calc, configuration=Debug, clean_build=false}
+timestamp=[2025-07-24 18:11:11], mode=BUILD, duration=0:00:01.374, duration_ms=1374, data={name=math_calc, configuration=Debug, clean_build=false}

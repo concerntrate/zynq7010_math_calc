@@ -1,0 +1,25 @@
+18:11:10 **** Incremental Build of configuration Debug for project math_calc ****
+make -j16 all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DARM_MATH_NEON -Wall -O3 -g3 -ID:/86198/ee_race/zynq_learn/prj/math_calc/math_calc.sdk/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -I"D:\86198\ee_race\zynq_learn\prj\math_calc\math_calc.sdk\math_calc\my_lib\CMSIS_DSP\ComputeLibrary\Include" -I"D:\86198\ee_race\zynq_learn\prj\math_calc\math_calc.sdk\math_calc\my_lib\CMSIS_DSP\Include" -I"D:\86198\ee_race\zynq_learn\prj\math_calc\math_calc.sdk\math_calc\my_lib\CMSIS_DSP\PrivateInclude" -I"D:\86198\ee_race\zynq_learn\prj\math_calc\math_calc.sdk\math_calc\my_lib\CMSIS_DSP\Include\dsp" -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: math_calc.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -L"D:\86198\ee_race\zynq_learn\prj\math_calc\math_calc.sdk\math_calc\my_lib\CMSIS_DSP" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/86198/ee_race/zynq_learn/prj/math_calc/math_calc.sdk/system_wrapper/export/system_wrapper/sw/system_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "math_calc.elf"  ./src/helloworld.o ./src/platform.o  ./my_lib/CMSIS_DSP/ComputeLibrary/Source/arm_cl_tables.o   -lm -lCMSISDSP -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: math_calc.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size math_calc.elf  |tee "math_calc.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 982967	   1780	  35248	1019995	  f905b	math_calc.elf
+'Finished building: math_calc.elf.size'
+' '
+
+18:11:11 Build Finished (took 1s.199ms)
+

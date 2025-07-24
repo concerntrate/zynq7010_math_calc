@@ -1,0 +1,44 @@
+#include "arm_math.h"
+#include <math.h>
+#include "xil_printf.h"
+#include "xtime_l.h"
+
+#define TEST_SIZE 100000
+
+float input[TEST_SIZE];
+float output_math[TEST_SIZE];
+float output_cmsis[TEST_SIZE];
+
+void init_data() {
+    for (int i = 0; i < TEST_SIZE; i++) {
+        input[i] = (float)i * 0.001f;
+    }
+}
+
+void test_math_h() {
+    XTime t1, t2;
+    XTime_GetTime(&t1);
+    for (int i = 0; i < TEST_SIZE; i++) {
+        output_math[i] = sinf(input[i]);
+    }
+    XTime_GetTime(&t2);
+    xil_printf("Time using math.h sinf():     %llu us\r\n", (t2 - t1) / (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ / 1000000));
+}
+
+void test_cmsis_dsp() {
+    XTime t1, t2;
+    XTime_GetTime(&t1);
+    for (int i = 0; i < TEST_SIZE; i++) {
+        output_cmsis[i] = arm_sin_f32(input[i]);
+    }
+    XTime_GetTime(&t2);
+    xil_printf("Time using CMSIS-DSP sin():   %llu us\r\n", (t2 - t1) / (XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ / 1000000));
+}
+
+int main() {
+    init_data();
+    test_math_h();
+    test_cmsis_dsp();
+    xil_printf("Sample result check: %f vs %f\r\n", output_math[100], output_cmsis[100]);
+    return 0;
+}

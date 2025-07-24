@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <math.h>
+#include "xil_printf.h"
+#include "xtime_l.h"
+
+// CMSIS-DSP 头文件
+#include "arm_math.h"
+
+#define TEST_SIZE 1000
+
+float input_angles[TEST_SIZE];
+float output_math[TEST_SIZE];
+float output_cmsis[TEST_SIZE];
+
+void generate_input() {
+    for (int i = 0; i < TEST_SIZE; i++) {
+        input_angles[i] = (float)i * 0.01f; // 0 ~ 10 radians
+    }
+}
+
+int main() {
+    XTime tStart, tEnd;
+    u64 time_math, time_cmsis;
+
+    generate_input();
+
+    // 使用 math.h 进行测试
+    XTime_GetTime(&tStart);
+    for (int i = 0; i < TEST_SIZE; i++) {
+        output_math[i] = sinf(input_angles[i]);
+    }
+    XTime_GetTime(&tEnd);
+    time_math = (tEnd - tStart) * 1000000 / COUNTS_PER_SECOND;
+
+    // 使用 CMSIS-DSP 进行测试
+    XTime_GetTime(&tStart);
+    for (int i = 0; i < TEST_SIZE; i++) {
+        output_cmsis[i] = arm_sin_f32(input_angles[i]);
+    }
+    XTime_GetTime(&tEnd);
+    time_cmsis = (tEnd - tStart) * 1000000 / COUNTS_PER_SECOND;
+
+    // 打印结果
+    xil_printf("Time using math.h sinf():     %llu us\r\n", time_math);
+    xil_printf("Time using CMSIS-DSP sin():   %llu us\r\n", time_cmsis);
+
+    return 0;
+}

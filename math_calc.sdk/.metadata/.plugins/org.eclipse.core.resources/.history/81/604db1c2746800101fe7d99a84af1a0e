@@ -1,0 +1,35 @@
+#include "xil_printf.h"
+#include "xtime_l.h"
+#include "arm_math.h"
+#include "arm_const_structs.h"
+
+#define FFT_SIZE 1024
+
+float32_t input[2 * FFT_SIZE];
+float32_t output[2 * FFT_SIZE];
+
+int main()
+{
+    for (int i = 0; i < FFT_SIZE; i++) {
+        input[2 * i]     = arm_sin_f32(2 * PI * 50 * i / FFT_SIZE);  // 实部
+        input[2 * i + 1] = 0.0f;  // 虚部
+    }
+
+    arm_cfft_instance_f32 cfft_instance = arm_cfft_sR_f32_len1024;
+
+    XTime t1, t2;
+    XTime_GetTime(&t1);
+
+    arm_cfft_f32(&cfft_instance, input, 0, 1);
+    arm_cmplx_mag_f32(input, output, FFT_SIZE);  // 得到幅度谱
+
+    XTime_GetTime(&t2);
+
+    xil_printf("FFT Done. Time: %llu cycles\n", (t2 - t1));
+
+    for (int i = 0; i < 10; i++) {
+        xil_printf("Bin %d: %f\n", i, output[i]);
+    }
+
+    return 0;
+}
